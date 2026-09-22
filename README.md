@@ -31,11 +31,11 @@ FastAPI  /query  ──  Chroma top-k retrieval  →  Ollama (llama3.2:3b) groun
 # 1. build the vector store first (git-ignored, ~37 MB — see Corpus below)
 git clone https://github.com/MosaabGKA/rag-assistant-app
 cd rag-assistant-app
-.venv/bin/python -m pip install -r notebooks-requirements.txt 2>/dev/null || true
+python -m venv .venv && . .venv/bin/activate
+python scripts/build_corpus.py
 #   (simplest: run notebooks/rag_pipeline.ipynb top-to-bottom to create the store)
 
 # 2. backend
-python -m venv .venv && . .venv/bin/activate
 cd backend
 pip install -r requirements.txt
 cp .env.example .env            # defaults are fine on a stock machine
@@ -148,10 +148,6 @@ so the table in `notebooks/rag_pipeline.ipynb` reproduces exactly.
 | Streamlit chat UI | Backend health endpoint |
 |---|---|
 | ![Streamlit chat UI](docs/screenshots/chat.png) | ![Backend /health](docs/screenshots/health.png) |
-
-> Real captures of the running app (local Ollama + persisted Chroma store).
-> To update them, boot the backend and frontend and re-capture
-> (`google-chrome --headless=new --screenshot=...`).
 
 ## Quality gates
 
