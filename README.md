@@ -145,9 +145,13 @@ so the table in `notebooks/rag_pipeline.ipynb` reproduces exactly.
 
 ## Screenshots
 
-> (Add a couple of screenshots of the running app — e.g. the Streamlit chat
-> with a grounded, cited answer and the `/health` status sidebar. Place PNGs in
-> `docs/screenshots/` and embed them here.)
+| Streamlit chat UI | Backend health endpoint |
+|---|---|
+| ![Streamlit chat UI](docs/screenshots/chat.png) | ![Backend /health](docs/screenshots/health.png) |
+
+> Real captures of the running app (local Ollama + persisted Chroma store).
+> To update them, boot the backend and frontend and re-capture
+> (`google-chrome --headless=new --screenshot=...`).
 
 ## Quality gates
 
