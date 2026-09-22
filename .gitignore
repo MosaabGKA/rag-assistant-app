@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Env / secrets — NEVER commit real keys
+.env
+.env.local
+!frontend/.env
+*.ollama
+
+# Large generated artifacts (rebuilt by notebooks/, keep code + config.json)
+backend/data/vector_store/
+backend/backend/
+*.sqlite3
+*.pickle
+*.checkpoint
+notebooks/.ipynb_checkpoints/
+
+# Raw dataset files (re-downloadable from Hugging Face; keep only data/documents/)
+data/raw/
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.hf_cache/
+*.arrow
+*.bin
+
+# HF downloads + chroma store files (rebuildable via notebooks/)
+backend/data/vector_store/
+
+# Streamlit local secrets placeholder (env-based config instead)
+frontend/.streamlit/
